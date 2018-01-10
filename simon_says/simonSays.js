@@ -32,8 +32,21 @@ function capitalize(word) {
 	// This function just capitalizes the word given to it, use in conjunction with titleCreator
 }
 
-function titleCreator() {
-	
+function titleCreator(str) {
+	let regExp = /\b(and|the|over|for)\b/;
+	str = str.split(' ');
+	let newStr = [];
+	str.forEach(word => {
+		if (regExp.test(word) == true) {
+			newStr.push(word);
+		} else {
+			word = capitalize(word);
+			newStr.push(word);
+		}
+	});
+	newStr = newStr.join(' ');
+	newStr = capitalize(newStr);
+	return newStr;
 }
 
 module.exports = {
