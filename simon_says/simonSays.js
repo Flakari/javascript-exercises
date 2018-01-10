@@ -1,21 +1,30 @@
-function echo() {
-	
+function echo(str) {
+	return str;
 }
 
-function shout() {
-	
+function shout(str) {
+	return str.toUpperCase();
 }
 
-function repeat() {
-
+function repeat(str, num) {
+	if (!num) {
+		str = str + ' ' + str;
+		return str;
+	}
+	let newStr = str;
+	for (let i = 1; i < num; i++) {
+		newStr = newStr + ' ' + str;
+	}
+	return newStr;
 }
 
-function pieceOfWord() {
-	
+function pieceOfWord(str, num) {
+	return str.slice(0, num);
 }
 
-function firstWord() {
-	
+function firstWord(str) {
+	str = str.split(' ');
+	return str[0];
 }
 
 function capitalize(word) {
